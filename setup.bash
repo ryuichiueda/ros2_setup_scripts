@@ -12,6 +12,7 @@ sudo apt-get install ros-dashing-desktop python3-colcon-common-extensions python
 
 sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list
 sudo rosdep init
+sudo rosdep fix-permissions
 
 rosdep update
 
