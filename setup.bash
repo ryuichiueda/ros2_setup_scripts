@@ -1,5 +1,8 @@
 #!/bin/bash -e 
 
+[ "${ROS_VERSION}" = "1" ] && echo ROS1 is set. Please comment out the lines of source for ROS1 on .bashrc and restart a terminal. && exit 1
+[ "${ROS_VERSION}" = "2" ] && echo ROS2 is set. Please comment out the lines of source for ROS2 on .bashrc and restart a terminal. && exit 1
+
 sudo apt-get install curl gnupg2
 #curl http://repo.ros2.org/repos.key |
 #sudo apt-key add - 
@@ -19,6 +22,11 @@ sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list
 sudo rosdep init
 sudo rosdep fix-permissions
 
+echo "source /opt/ros/${ROS_VER}/setup.bash" >> ~/.bashrc
+
 rosdep update
 
-echo "OK!!"
+echo '***INSTRUCTION*****************'
+echo '* do the following command    *'
+echo '* $ source ~/.bashrc          *'
+echo '*******************************'
