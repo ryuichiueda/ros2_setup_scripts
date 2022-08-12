@@ -1,4 +1,4 @@
-#!/bin/bash -exv
+#!/bin/bash -e
 
 [ "${ROS_VERSION}" = "1" ] && echo ROS1 is set. Please comment out the lines of source for ROS1 on .bashrc and restart a terminal. && exit 1
 [ "${ROS_VERSION}" = "2" ] && echo ROS2 is set. Please comment out the lines of source for ROS2 on .bashrc and restart a terminal. && exit 1
