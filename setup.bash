@@ -6,7 +6,7 @@
 [ "${ROS_VERSION}" = "2" ] && echo ROS2 is set. Please comment out the lines of source for ROS2 on .bashrc and restart a terminal. && exit 1
 
 sudo apt-get update
-sudo apt-get install curl gnupg2
+sudo apt-get install -y curl gnupg2
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 
 UBUNTU_VER=$(lsb_release -sc)
@@ -19,7 +19,7 @@ sudo tee /etc/apt/sources.list.d/ros2-latest.list
 
 #sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F42ED6FBAB17C654
 sudo apt-get update
-sudo apt-get install ros-${ROS_VER}-desktop python3-colcon-common-extensions python3-rosdep python3-argcomplete 
+sudo apt-get install -y ros-${ROS_VER}-desktop python3-colcon-common-extensions python3-rosdep python3-argcomplete 
 
 sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list
 sudo rosdep init
