@@ -13,6 +13,7 @@ UBUNTU_VER=$(lsb_release -sc)
 ROS_VER=dashing
 [ "$UBUNTU_VER" = "focal" ] && ROS_VER=foxy
 [ "$UBUNTU_VER" = "jammy" ] && ROS_VER=humble
+[ "$UBUNTU_VER" = "noble" ] && ROS_VER=rolling
 
 echo "deb [ signed-by=/usr/share/keyrings/ros-archive-keyring.gpg arch=amd64,arm64] http://packages.ros.org/ros2/ubuntu ${UBUNTU_VER} main" |
 sudo tee /etc/apt/sources.list.d/ros2-latest.list
